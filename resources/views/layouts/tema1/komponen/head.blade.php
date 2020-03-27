@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/themify-icons/themify-icons.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.0.1/collection/components/icon/icon.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/icofont/css/icofont.min.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/jquery.mCustomScrollbar.css') }}">
 

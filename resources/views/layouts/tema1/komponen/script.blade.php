@@ -21,4 +21,5 @@
 <script src="{{ asset('mega-able/files/assets/js/vertical/vertical-layout.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('mega-able/files/assets/js/script.js') }}"></script>
+@stack('script')
 

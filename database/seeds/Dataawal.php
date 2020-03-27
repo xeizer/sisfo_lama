@@ -16,30 +16,37 @@ class Dataawal extends Seeder
         //Membuat ROLE
         $superadmin = Role::create([
             'name' => 'su',
+            'color' => 'primary',
             'display_name' => 'Super Admin'
         ]);
         $admin = Role::create([
             'name' => 'admin',
+            'color' => 'inverse-primary',
             'display_name' => 'Administrator'
         ]);
         $kepalasekolah = Role::create([
             'name' => 'kepsek',
+            'color' => 'success',
             'display_name' => 'Kepala Sekolah'
         ]);
         $guru = Role::create([
             'name' => 'guru',
+            'color' => 'inverse-success',
             'display_name' => 'Guru'
         ]);
         $tu = Role::create([
             'name' => 'tu',
+            'color' => 'info',
             'display_name' => 'Tata Usaha'
         ]);
         $siswa = Role::create([
             'name' => 'siswa',
+            'color' => 'danger',
             'display_name' => 'Siswa'
         ]);
         $ortu = Role::create([
             'name' => 'ortu',
+            'color' =>'inverse-danger',
             'display_name' => 'Orang Tua'
         ]);
 
@@ -49,7 +56,7 @@ class Dataawal extends Seeder
             'username' => 'admingood',
             'password' => bcrypt('rahasia'),
             'email' => ' sudo@smkn7ptk.sch.id'
-        ])->attachRole('su');
+        ])->attachRole('su')->attachRole('admin')->attachRole('guru');
 
 
     }

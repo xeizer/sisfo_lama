@@ -87,7 +87,7 @@
                                             </a>
                                         </li>
                                         <li class="waves-effect waves-light">
-                                            <a href="#!">
+                                            <a href="{{route('profil.index')}}">
                                                 <i class="ti-user"></i> Profile
                                             </a>
                                         </li>
@@ -108,7 +108,7 @@
                                         </li>
                                     @else
                                         <li class="waves-effect waves-light">
-                                            <a href="#!">
+                                            <a href="{{route('login')}}">
                                                 <i class="ti-key"></i> Login
                                             </a>
                                         </li>
@@ -129,6 +129,9 @@
                     <div class="pcoded-content">
 
                         {{--pageheader--}}
+                        {{--<x-tema1.pageheader :judul=$judul/>--}}
+                        @include('layouts.tema1.komponen.page-header')
+                        {{--page header --}}
 
                         <div class="pcoded-inner-content">
 
