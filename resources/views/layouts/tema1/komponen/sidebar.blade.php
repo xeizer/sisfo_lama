@@ -1,6 +1,7 @@
 <nav class="pcoded-navbar">
     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
     <div class="pcoded-inner-navbar main-menu">
+        @auth
         <div class="">
             <div class="main-menu-header">
                 <img class="img-80 img-radius" src="../files/assets/images/avatar-4.jpg" alt="User-Profile-Image">
@@ -1865,5 +1866,29 @@
                 </a>
             </li>
         </ul>
+        @else
+        <div class="">
+            <div class="main-menu-header">
+                <img class="img-80 img-radius" src="../files/assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                <div class="user-details">
+                    <b class="text-white">Hallo</b>
+                </div>
+            </div>
+
+        </div>
+        <div class="pcoded-navigation-label">Selamat datang</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="">
+                <a href="{{route('login')}}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-key"></i><b>L</b></span>
+                    <span class="pcoded-mtext">Login</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        @endauth
+
+
+
     </div>
 </nav>
