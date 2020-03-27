@@ -13,7 +13,6 @@
 <script type="text/javascript" src="{{ asset('mega-able/files/assets/js/SmoothScroll.js') }}"></script>
 <script src="{{ asset('mega-able/files/assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('mega-able/files/bower_components/chart.js/js/Chart.js') }}"></script>
 
 
 <script type="text/javascript" src="{{ asset('mega-able/files/assets/pages/google-maps/gmaps.js') }}"></script>

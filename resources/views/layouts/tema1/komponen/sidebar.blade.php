@@ -1879,13 +1879,14 @@
         <div class="pcoded-navigation-label">Selamat datang</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="">
-                <a href="{{route('login')}}" class="waves-effect waves-dark">
+                <a href="#!" class="waves-effect waves-dark" data-toggle="modal" data-target="#sign-in">
                     <span class="pcoded-micon"><i class="ti-key"></i><b>L</b></span>
                     <span class="pcoded-mtext">Login</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
         </ul>
+
         @endauth
 
 

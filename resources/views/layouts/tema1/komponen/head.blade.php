@@ -22,11 +22,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/bootstrap/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('mega-able/files/assets/pages/waves/css/waves.min.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/themify-icons/themify-icons.css') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/font-awesome/css/all.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/jquery.mCustomScrollbar.css') }}">
 
@@ -35,4 +34,5 @@
     <link rel="stylesheet" href="{{ asset('mega-able/files/assets/pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/style.css') }}">
+
 </head>

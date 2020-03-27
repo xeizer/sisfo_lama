@@ -136,26 +136,20 @@
                                 <div class="page-wrapper">
 
                                     <div class="page-body">
+                                        @yield('konten')
                                         <div class="row">
-                                            <div class="col-xl-8 col-md-12">
+                                            <div class="col-md-4">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Sales Analytics</h5>
-                                                        <span class="text-muted">Get 15% Off on <a href="https://www.amcharts.com/" target="_blank">amCharts</a> licences. Use code "Phoenixcoded" and get the discount.</span>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
+                                                        <h5>Normal Sign In</h5>
                                                     </div>
                                                     <div class="card-block">
-                                                        <x-tema1.modal class="btn btn-primary" header="Modal Baru">
-                                                            holaaaa
-                                                        </x-tema1.modal>
+                                                        <p>
+                                                            <x-tema1.modal header="Hola" class="btn btn-primary"/>
+                                                        </p>
+                                                        <p class="text-center">
+                                                            <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#sign-in">Normal Sign in</button>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -163,8 +157,65 @@
                                         </div>
                                     </div>
 
+                                    <div id="sign-in" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="card">
+                                                <div class="card-block">
+                                                    <form class="md-float-material form-material">
+                                                        <div class="row m-b-20">
+                                                            <div class="col-md-12">
+                                                                <h3 class="text-center">Login</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="text" name="email" class="form-control" required="">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">NISN</label>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="password" name="password" class="form-control" required="">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">Password</label>
+                                                        </div>
+                                                        <div class="row m-t-25 text-left">
+                                                            <div class="col-12">
+                                                                <div class="checkbox-fade fade-in-primary d-">
+                                                                    <label>
+                                                                        <input type="checkbox" value="">
+                                                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                                        <span class="text-inverse">Ingati Saya</span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="forgot-phone text-right f-right">
+                                                                    <a href="#!" class="text-right f-w-600"> Lupa Password ?</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row m-t-30">
+                                                            <div class="col-md-12">
+                                                                <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk</button>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="col-md-10">
+                                                                <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                                                <p class="text-inverse text-left"><a href="{{route('home')}}"><b>Kembali ke beranda</b></a></p>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <img src="{{ asset('gambar/logo/android-icon-48x48.png')}}" alt="small-logo.png">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div id="styleSelector"> </div>
+                            </div>
+
+                            <div id="styleSelector">
                             </div>
                         </div>
                     </div>
