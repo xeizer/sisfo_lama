@@ -72,7 +72,7 @@
                                     <img src="{{asset('gambar/nofoto.png')}}" class="img-radius" alt="User-Profile-Image">
                                     <span>
                                         @auth
-                                            {{Auth::name()}}
+                                            {{Auth::user()->name}}
                                         @else
                                             Hallo
                                         @endauth
@@ -102,7 +102,7 @@
                                             </a>
                                         </li>
                                         <li class="waves-effect waves-light">
-                                            <a href="#!">
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                 <i class="ti-layout-sidebar-left"></i> Logout
                                             </a>
                                         </li>
@@ -157,60 +157,7 @@
                                         </div>
                                     </div>
 
-                                    <div id="sign-in" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="card">
-                                                <div class="card-block">
-                                                    <form class="md-float-material form-material">
-                                                        <div class="row m-b-20">
-                                                            <div class="col-md-12">
-                                                                <h3 class="text-center">Login</h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group form-primary">
-                                                            <input type="text" name="email" class="form-control" required="">
-                                                            <span class="form-bar"></span>
-                                                            <label class="float-label">NISN</label>
-                                                        </div>
-                                                        <div class="form-group form-primary">
-                                                            <input type="password" name="password" class="form-control" required="">
-                                                            <span class="form-bar"></span>
-                                                            <label class="float-label">Password</label>
-                                                        </div>
-                                                        <div class="row m-t-25 text-left">
-                                                            <div class="col-12">
-                                                                <div class="checkbox-fade fade-in-primary d-">
-                                                                    <label>
-                                                                        <input type="checkbox" value="">
-                                                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                                        <span class="text-inverse">Ingati Saya</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="forgot-phone text-right f-right">
-                                                                    <a href="#!" class="text-right f-w-600"> Lupa Password ?</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row m-t-30">
-                                                            <div class="col-md-12">
-                                                                <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Masuk</button>
-                                                            </div>
-                                                        </div>
-                                                        <hr />
-                                                        <div class="row">
-                                                            <div class="col-md-10">
-                                                                <p class="text-inverse text-left m-b-0">Thank you.</p>
-                                                                <p class="text-inverse text-left"><a href="{{route('home')}}"><b>Kembali ke beranda</b></a></p>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <img src="{{ asset('gambar/logo/android-icon-48x48.png')}}" alt="small-logo.png">
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                 </div>
                             </div>
@@ -267,6 +214,9 @@
 <![endif]-->
 
 @include('layouts.tema1.komponen.script')
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 </body>
 
 <!-- Mirrored from html.phoenixcoded.net/mega-able/default/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Mar 2020 05:16:55 GMT -->
