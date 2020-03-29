@@ -94,14 +94,7 @@
                                                                 <th scope="row">Agama</th>
                                                                 <td>{{Auth::user()->agama}}</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th scope="row">Tempat Lahir</th>
-                                                                <td>{{Auth::user()->tempat_lahir}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Tanggal lahir</th>
-                                                                <td>{{Auth::user()->tanggal_lahir ? Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->format('d-m-Y ') : '-' }}</td>
-                                                            </tr>
+
                                                             <tr>
                                                                 <th scope="row">Alamat</th>
                                                                 <td>{{Auth::user()->alamat}}</td>
@@ -116,29 +109,14 @@
                                                     <table class="table">
                                                         <tbody>
                                                             <tr>
+                                                                <th scope="row">Tempat Tanggal Lahir</th>
+                                                                <td>{{Auth::user()->tempat_lahir}}, {{Auth::user()->tanggal_lahir ? Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->format('d-m-Y ') : '-' }}</td>
+                                                            </tr>
+                                                            <tr>
                                                                 <th scope="row">Email</th>
                                                                 <td>{{Auth::user()->email}}</td>
                                                             </tr>
-                                                            @role('siswa')
-                                                            <tr>
-                                                                <th scope="row">NISN</th>
-                                                                <td>{{'nisn'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Kelas / Jurusan</th>
-                                                                <td>{{'kelas'}} / {{'Jurusan'}}</td>
-                                                            </tr>
-                                                            @endrole
-                                                            @role('guru|kepsek')
-                                                            <tr>
-                                                                <th scope="row">NIP</th>
-                                                                <td>{{'nip'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">NUPTK</th>
-                                                                <td>{{'nuptk'}}</td>
-                                                            </tr>
-                                                            @endrole
+
                                                             <tr>
                                                                 <th scope="row">Telepon</th>
                                                                 <td>{{Auth::user()->tlp}}</td>
@@ -322,27 +300,234 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-header-text">Description About Me</h5>
-                                <button id="edit-info-btn" type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right">
-                                    <i class="icofont icofont-edit"></i>
+                                <h5 class="card-header-text">Informasi Lain</h5>
+                                <button id="edit-btn2" type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right">
+                                    <i class="icofont icofont-edit"></i><i class="fa fa-pencil" aria-hidden="true"></i> Ubah Profil
                                 </button>
                             </div>
-                            <div class="card-block user-desc">
-                                <div class="view-desc">
-                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?" "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able To Do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pain.</p>
-                                </div>
-                                <div class="edit-desc">
-                                    <div class="col-md-12">
-                                        <textarea id="description">
-                                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?" "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able To Do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pain.</p>
-                                        </textarea>
+                            <div class="card-block">
+                                <div class="view-info2">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="general-info">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="table-responsive">
+                                                            <table class="table m-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">Nama Lengkap</th>
+                                                                        <td>{{Auth::user()->name}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Jenis Kelamin</th>
+                                                                        <td>{{Auth::user()->jkel}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Agama</th>
+                                                                        <td>{{Auth::user()->agama}}</td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">Alamat</th>
+                                                                        <td>{{Auth::user()->alamat}}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-xl-6">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">Tempat Tanggal Lahir</th>
+                                                                        <td>{{Auth::user()->tempat_lahir}}, {{Auth::user()->tanggal_lahir ? Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->format('d-m-Y ') : '-' }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Email</th>
+                                                                        <td>{{Auth::user()->email}}</td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">Telepon</th>
+                                                                        <td>{{Auth::user()->tlp}}</td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                                    <div class="text-center">
-                                        <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20 m-t-20">Save</a>
-                                        <a href="#!" id="edit-cancel-btn" class="btn btn-default waves-effect m-t-20">Cancel</a>
-                                    </div>
+
                                 </div>
+                                <form action="{{route('profil.update')}}" enctype="application/x-www-form-urlencoded" method="POST" id="form">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="edit-info2">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="general-info form-material">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 ">
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="username" class="form-control" required="" value="{{Auth::user()->username}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Username (untuk login)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="name" class="form-control" required="" value="{{Auth::user()->name}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Nama Lengkap</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-venus-mars"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <div class="form-radio">
+                                                                        <div class="group-add-on">
+                                                                            <div class="radio radiofill radio-inline">
+                                                                                <label>
+                                                                                    <input type="radio" value="L" name="jkel" {{Auth::user()->jkel =='L' ? 'checked' : ''}}><i class="helper"></i> Laki-Laki
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="radio radiofill radio-inline">
+                                                                                <label>
+                                                                                    <input type="radio" value="P" name="jkel" {{Auth::user()->jkel =='P' ? 'checked' : ''}}><i class="helper"></i> Perempuan
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-birthday-cake"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="tempat_lahir" class="form-control" required="" value="{{Auth::user()->tempat_lahir}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Tempat Lahir</label>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="date" name="tanggal_lahir" class="form-control" required="" value="{{Auth::user()->tanggal_lahir ? Auth::user()->tanggal_lahir : '' }}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <select id="hello-single" class="form-control" name="agama">
+                                                                        <option >---- Agama ----</option>
+                                                                        <option value="Islam" {{Auth::user()->agama == 'Islam' ? 'selected' : ''}}>Islam</option>
+                                                                        <option value="Protestan" {{Auth::user()->agama == 'Protestan' ? 'selected' : ''}}>Protestan</option>
+                                                                        <option value="Khatolik" {{Auth::user()->agama == 'Khatolik' ? 'selected' : ''}}>Khatolik</option>
+                                                                        <option value="Hindu" {{Auth::user()->agama == 'Hindu' ? 'selected' : ''}}>Hindu</option>
+                                                                        <option value="Budha" {{Auth::user()->agama == 'Budha' ? 'selected' : ''}}>Budha</option>
+                                                                    </select>
+                                                                    <span class="form-bar"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="alamat" class="form-control" required="" value="{{Auth::user()->alamat}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Alamat</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="email" class="form-control" required="" value="{{Auth::user()->email}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Email</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="ktp" class="form-control" value="{{Auth::user()->ktp}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Nomor KTP</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="tlp" class="form-control" required="" value="{{Auth::user()->tlp}}">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">No Telepon</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="material-group">
+                                                                <div class="material-addone">
+                                                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="form-group form-primary">
+                                                                    <input type="text" name="password_baru" class="form-control">
+                                                                    <span class="form-bar"></span>
+                                                                    <label class="float-label">Ganti Password (kosongkan jika tidak diubah)</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="modal" data-target="#modal">Simpan Perubahan</a>
+                                                        <a href="#!" id="edit-cancel" class="btn btn-default waves-effect">Cancel</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <x-tema1.modal header="Verifikasi Password">
+                                        Untuk Verifikasi, Mohon masukkan password Anda :
+                                        <input type="password" class="form-control" name="password" required placeholder="masukkan Password Anda" />
+                                    </x-tema1.modal>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
