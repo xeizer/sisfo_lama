@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.0.1/collection/components/icon/icon.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/icofont/css/icofont.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/pnotify/css/pnotify.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/pnotify/css/pnotify.brighttheme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/pnotify/css/pnotify.buttons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/pnotify/css/pnotify.history.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/pnotify/css/pnotify.mobile.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/pages/pnotify/notify.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/jquery.mCustomScrollbar.css') }}">
 
@@ -36,5 +42,21 @@
     <link rel="stylesheet" href="{{ asset('mega-able/files/assets/pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/style.css') }}">
+    <style>
+        @keyframes fa-blink {
+            0% { opacity: 1; }
+            25% { opacity: 0.75; }
+            50% { opacity: 0.5; }
+            75% { opacity: 0.25; }
+            100% { opacity: 0; }
+        }
+        .fa-blink {
+        -webkit-animation: fa-blink .75s linear infinite;
+        -moz-animation: fa-blink .75s linear infinite;
+        -ms-animation: fa-blink .75s linear infinite;
+        -o-animation: fa-blink .75s linear infinite;
+        animation: fa-blink .75s linear infinite;
+        }
+    </style>
 
 </head>

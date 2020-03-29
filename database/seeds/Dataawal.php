@@ -55,7 +55,13 @@ class Dataawal extends Seeder
             'name' => 'Super Admin',
             'username' => 'admingood',
             'password' => bcrypt('rahasia'),
-            'email' => ' sudo@smkn7ptk.sch.id'
+            'email' => ' sudo@smkn7ptk.sch.id',
+            'tempat_lahir' => 'Pontianak',
+            'tanggal_lahir' => '1987/10/28',
+            'agama' => 'Islam',
+            'jkel' => 'L',
+            'tlp' => '0987656787655',
+            'alamat' => 'Jl. Apel Gg Langsat no 33'
         ])->attachRole('su')->attachRole('admin')->attachRole('guru');
 
 

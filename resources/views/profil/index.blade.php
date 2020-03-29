@@ -100,7 +100,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">Tanggal lahir</th>
-                                                                <td>{{Auth::user()->tanggal_lahir ? Auth::user()->tanggal_lahir->format('d-M-Y') : '-'}}</td>
+                                                                <td>{{Auth::user()->tanggal_lahir ? Carbon\Carbon::parse(Auth::user()->tanggal_lahir)->format('d-m-Y ') : '-' }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">Alamat</th>
@@ -158,7 +158,7 @@
                             </div>
 
                         </div>
-                        <form action="" enctype="application/x-www-form-urlencoded" method="POST">
+                        <form action="{{route('profil.update')}}" enctype="application/x-www-form-urlencoded" method="POST" id="form">
                             @csrf
                             @method('PUT')
                             <div class="edit-info">
@@ -172,7 +172,17 @@
                                                             <i class="fa fa-user" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="text" name="name" class="form-control" required="">
+                                                            <input type="text" name="username" class="form-control" required="" value="{{Auth::user()->username}}">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">Username (untuk login)</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="material-group">
+                                                        <div class="material-addone">
+                                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="text" name="name" class="form-control" required="" value="{{Auth::user()->name}}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label">Nama Lengkap</label>
                                                         </div>
@@ -186,29 +196,30 @@
                                                                 <div class="group-add-on">
                                                                     <div class="radio radiofill radio-inline">
                                                                         <label>
-                                                                            <input type="radio" name="jkel" checked><i class="helper"></i> Laki-Laki
+                                                                            <input type="radio" value="L" name="jkel" {{Auth::user()->jkel =='L' ? 'checked' : ''}}><i class="helper"></i> Laki-Laki
                                                                         </label>
                                                                     </div>
                                                                     <div class="radio radiofill radio-inline">
                                                                         <label>
-                                                                            <input type="radio" name="jkel"><i class="helper"></i> Perempuan
+                                                                            <input type="radio" value="P" name="jkel" {{Auth::user()->jkel =='P' ? 'checked' : ''}}><i class="helper"></i> Perempuan
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="material-group">
                                                         <div class="material-addone">
                                                             <i class="fa fa-birthday-cake"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="text" name="tempat_lahir" class="form-control" required="">
+                                                            <input type="text" name="tempat_lahir" class="form-control" required="" value="{{Auth::user()->tempat_lahir}}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label">Tempat Lahir</label>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="date" name="tanggal_lahir" class="form-control" required="">
+                                                            <input type="date" name="tanggal_lahir" class="form-control" required="" value="{{Auth::user()->tanggal_lahir ? Auth::user()->tanggal_lahir : '' }}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label"></label>
                                                         </div>
@@ -219,12 +230,12 @@
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <select id="hello-single" class="form-control" name="agama">
-                                                                <option value="">---- Agama ----</option>
-                                                                <option value="Islam">Islam</option>
-                                                                <option value="Protestan">Protestan</option>
-                                                                <option value="Khatolik">Khatolik</option>
-                                                                <option value="Hindu">Hindu</option>
-                                                                <option value="Budha">Budha</option>
+                                                                <option >---- Agama ----</option>
+                                                                <option value="Islam" {{Auth::user()->agama == 'Islam' ? 'selected' : ''}}>Islam</option>
+                                                                <option value="Protestan" {{Auth::user()->agama == 'Protestan' ? 'selected' : ''}}>Protestan</option>
+                                                                <option value="Khatolik" {{Auth::user()->agama == 'Khatolik' ? 'selected' : ''}}>Khatolik</option>
+                                                                <option value="Hindu" {{Auth::user()->agama == 'Hindu' ? 'selected' : ''}}>Hindu</option>
+                                                                <option value="Budha" {{Auth::user()->agama == 'Budha' ? 'selected' : ''}}>Budha</option>
                                                             </select>
                                                             <span class="form-bar"></span>
                                                         </div>
@@ -234,7 +245,7 @@
                                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="text" name="alamat" class="form-control" required="">
+                                                            <input type="text" name="alamat" class="form-control" required="" value="{{Auth::user()->alamat}}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label">Alamat</label>
                                                         </div>
@@ -247,9 +258,19 @@
                                                             <i class="fa fa-envelope" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="text" name="email" class="form-control" required="">
+                                                            <input type="text" name="email" class="form-control" required="" value="{{Auth::user()->email}}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label">Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="material-group">
+                                                        <div class="material-addone">
+                                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="text" name="ktp" class="form-control" value="{{Auth::user()->ktp}}">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">Nomor KTP</label>
                                                         </div>
                                                     </div>
                                                     <div class="material-group">
@@ -257,9 +278,20 @@
                                                             <i class="fa fa-phone" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
-                                                            <input type="text" name="tlp" class="form-control" required="">
+                                                            <input type="text" name="tlp" class="form-control" required="" value="{{Auth::user()->tlp}}">
                                                             <span class="form-bar"></span>
                                                             <label class="float-label">No Telepon</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="material-group">
+                                                        <div class="material-addone">
+                                                            <i class="fa fa-key" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="text" name="password_baru" class="form-control">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">Ganti Password (kosongkan jika tidak diubah)</label>
                                                         </div>
                                                     </div>
 
@@ -268,7 +300,7 @@
                                             </div>
 
                                             <div class="text-center">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20">Simpan Perubahan</button>
+                                                <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20" data-toggle="modal" data-target="#modal">Simpan Perubahan</a>
                                                 <a href="#!" id="edit-cancel" class="btn btn-default waves-effect">Cancel</a>
                                             </div>
                                         </div>
@@ -278,6 +310,10 @@
                                 </div>
 
                             </div>
+                            <x-tema1.modal header="Verifikasi Password">
+                                Untuk Verifikasi, Mohon masukkan password Anda :
+                                <input type="password" class="form-control" name="password" required placeholder="masukkan Password Anda" />
+                            </x-tema1.modal>
                         </form>
                     </div>
 
@@ -1716,5 +1752,6 @@
     <script src="{{ asset('mega-able/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js' ) }}"></script>
     <script src="{{ asset('mega-able/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' ) }}"></script>
     <script src="{{ asset('mega-able/files/assets/pages/ckeditor/ckeditor.js')}}"></script>
+
 @endpush
 @endsection
