@@ -69,4 +69,10 @@ class ProfilController extends Controller
             ]);
         }
     }
+    public function setting()
+    {
+        return view('profil.setting')->with([
+            'judul' => "Setting"
+        ]);
+    }
 }

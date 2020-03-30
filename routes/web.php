@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('profil')->middleware('auth')->name('profil.')->group(function () {
     Route::get('/', 'ProfilController@index')->name('index');
     Route::put('/update', 'ProfilController@update')->name('update');
+    Route::get('/setting', 'ProfilController@setting')->name('setting');
 });

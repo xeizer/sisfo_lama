@@ -82,7 +82,7 @@
                                 <ul class="show-notification profile-notification">
                                     @auth
                                         <li class="waves-effect waves-light">
-                                            <a href="#!">
+                                            <a href="{{ route('profil.setting') }}">
                                                 <i class="ti-settings"></i> Settings
                                             </a>
                                         </li>
