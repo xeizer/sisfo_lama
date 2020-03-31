@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ asset('mega-able/files/assets/pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/style.css') }}">
+    @livewireStyles
     <style>
         @keyframes fa-blink {
             0% { opacity: 1; }
