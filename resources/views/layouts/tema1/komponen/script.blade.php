@@ -22,8 +22,9 @@
 <script type="text/javascript" src="{{ asset('mega-able/files/bower_components/pnotify/js/pnotify.history.js') }}"></script>
 <script type="text/javascript" src="{{ asset('mega-able/files/bower_components/pnotify/js/pnotify.mobile.js') }}"></script>
 <script type="text/javascript" src="{{ asset('mega-able/files/bower_components/pnotify/js/pnotify.nonblock.js') }}"></script>
-
-
+{{--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+{{--}}
 <script type="text/javascript" src="{{ asset('mega-able/files/assets/pages/google-maps/gmaps.js') }}"></script>
 
 <script src="{{ asset('mega-able/files/assets/js/pcoded.min.js') }}"></script>

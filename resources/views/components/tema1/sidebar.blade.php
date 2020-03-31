@@ -1,19 +1,20 @@
 <nav class="pcoded-navbar">
     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
     <div class="pcoded-inner-navbar main-menu">
+        @auth
         <div class="">
             <div class="main-menu-header">
                 <img class="img-80 img-radius" src="../files/assets/images/avatar-4.jpg" alt="User-Profile-Image">
                 <div class="user-details">
-                    <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
+                    <span id="more-details">{{Auth::user()->name}}<i class="fa fa-caret-down"></i></span>
                 </div>
             </div>
             <div class="main-menu-content">
                 <ul>
                     <li class="more-details">
-                        <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
-                        <a href="#!"><i class="ti-settings"></i>Settings</a>
-                        <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                        <a href="{{ route('profil.index') }}"><i class="ti-user"></i>View Profile</a>
+                        <a href="{{ route('profil.setting') }}"><i class="ti-settings"></i>Settings</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="ti-layout-sidebar-left"></i>Logout</a>
                     </li>
                 </ul>
             </div>
@@ -27,12 +28,19 @@
                 </div>
             </form>
         </div>
-        <div class="pcoded-navigation-label">Navigation</div>
+        <div class="pcoded-navigation-label">Sekolah</div>
         <ul class="pcoded-item pcoded-left-item">
-            <li class="pcoded-hasmenu active pcoded-trigger">
-                <a href="javascript:void(0)" class="waves-effect waves-dark">
+            <li class="">
+                <a href="navbar-light.html" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                     <span class="pcoded-mtext">Dashboard</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                    <span class="pcoded-mtext">Dashboard </span>
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
@@ -1865,5 +1873,32 @@
                 </a>
             </li>
         </ul>
+
+        @else
+        <div class="">
+            <div class="main-menu-header">
+                <img class="img-80 img-radius" src="../files/assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                <div class="user-details">
+                    <b class="text-white">Hallo</b>
+                </div>
+            </div>
+
+        </div>
+        <div class="pcoded-navigation-label">Selamat datang</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="">
+                <a href="{{route('login')}}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-key"></i><b>L</b></span>
+                    <span class="pcoded-mtext">Login</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+
+        @endauth
+
+
+
     </div>
 </nav>

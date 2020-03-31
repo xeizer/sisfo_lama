@@ -8,7 +8,7 @@
                 <div class="card-block user-info">
                     <div class="col-md-12">
                         <div class="media-left">
-                            <img  src="{{asset('gambar/nofoto.png')}}" alt="user-img">
+                            <img  src="{{asset(Auth::user()->foto)}}" width="150" alt="user-img" class="img-fluid img-thumbnail">
                         </div>
                         <div class="media-body row">
                             <div class="col-lg-12">
@@ -26,7 +26,7 @@
                             <div>
                                 <div class="pull-right cover-btn">
                                     <button type="button" class="btn btn-primary m-r-10 m-b-10"><i class="icofont-plus"></i> Follow</button>
-                                    <button type="button" class="btn btn-primary m-b-10"><i class="icofont icofont-ui-messaging"></i><i class="fa fa-envelope" aria-hidden="true"></i> Message</button>
+                                    <button type="button" class="btn btn-primary m-b-10"><i class="icofont icofont-ui-messaging"></i><i class="fas fa-envelope" aria-hidden="true"></i> Message</button>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                     <div class="card-header">
                         <h5 class="card-header-text">Tentang {{Auth::user()->name}}</h5>
                         <button id="edit-btn" type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right">
-                            <i class="icofont icofont-edit"></i><i class="fa fa-pencil" aria-hidden="true"></i> Ubah Profil
+                            <i class="icofont icofont-edit"></i><i class="fas fa-pencil-alt" aria-hidden="true"></i> Ubah Profil
                         </button>
                     </div>
                     <div class="card-block">
@@ -136,7 +136,7 @@
                             </div>
 
                         </div>
-                        <form action="{{route('profil.update')}}" enctype="application/x-www-form-urlencoded" method="POST" id="form">
+                        <form action="{{route('profil.update')}}" enctype="multipart/form-data" method="POST" id="form">
                             @csrf
                             @method('PUT')
                             <div class="edit-info">
@@ -147,7 +147,7 @@
                                                 <div class="col-lg-6 ">
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                                            <i class="fas fa-user" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="username" class="form-control" required="" value="{{Auth::user()->username}}">
@@ -157,7 +157,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                                            <i class="fas fa-user" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="name" class="form-control" required="" value="{{Auth::user()->name}}">
@@ -167,7 +167,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-venus-mars"></i>
+                                                            <i class="fas fa-venus-mars"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <div class="form-radio">
@@ -189,7 +189,7 @@
 
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-birthday-cake"></i>
+                                                            <i class="fas fa-birthday-cake"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="tempat_lahir" class="form-control" required="" value="{{Auth::user()->tempat_lahir}}">
@@ -204,7 +204,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-heart"></i>
+                                                            <i class="fas fa-heart"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <select id="hello-single" class="form-control" name="agama">
@@ -220,7 +220,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                            <i class="fas fa-map-marker" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="alamat" class="form-control" required="" value="{{Auth::user()->alamat}}">
@@ -233,7 +233,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                            <i class="fas fa-envelope" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="email" class="form-control" required="" value="{{Auth::user()->email}}">
@@ -243,7 +243,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                                            <i class="fas fa-user" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="ktp" class="form-control" value="{{Auth::user()->ktp}}">
@@ -253,7 +253,7 @@
                                                     </div>
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            <i class="fas fa-phone" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="tlp" class="form-control" required="" value="{{Auth::user()->tlp}}">
@@ -261,10 +261,20 @@
                                                             <label class="float-label">No Telepon</label>
                                                         </div>
                                                     </div>
+                                                    <div class="material-group">
+                                                        <div class="material-addone">
+                                                            <i class="fas fa-picture-o" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="form-group form-primary">
+                                                            <input type="file" name="foto" class="form-control">
+                                                            <span class="form-bar"></span>
+                                                            <label class="float-label">Foto Profil</label>
+                                                        </div>
+                                                    </div>
 
                                                     <div class="material-group">
                                                         <div class="material-addone">
-                                                            <i class="fa fa-key" aria-hidden="true"></i>
+                                                            <i class="fas fa-key" aria-hidden="true"></i>
                                                         </div>
                                                         <div class="form-group form-primary">
                                                             <input type="text" name="password_baru" class="form-control">
@@ -303,7 +313,7 @@
                             <div class="card-header">
                                 <h5 class="card-header-text">Informasi Lain</h5>
                                 <button id="edit-btn2" type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right">
-                                    <i class="icofont icofont-edit"></i><i class="fa fa-pencil" aria-hidden="true"></i> Ubah Profil
+                                    <i class="icofont icofont-edit"></i><i class="fas fa-pencil" aria-hidden="true"></i> Ubah Profil
                                 </button>
                             </div>
                             <div class="card-block">
@@ -381,7 +391,7 @@
                                                         <div class="col-lg-6 ">
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                    <i class="fas fa-user" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="username" class="form-control" required="" value="{{Auth::user()->username}}">
@@ -391,7 +401,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                    <i class="fas fa-user" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="name" class="form-control" required="" value="{{Auth::user()->name}}">
@@ -401,7 +411,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-venus-mars"></i>
+                                                                    <i class="fas fa-venus-mars"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <div class="form-radio">
@@ -423,7 +433,7 @@
 
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-birthday-cake"></i>
+                                                                    <i class="fas fa-birthday-cake"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="tempat_lahir" class="form-control" required="" value="{{Auth::user()->tempat_lahir}}">
@@ -438,7 +448,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-heart"></i>
+                                                                    <i class="fas fa-heart"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <select id="hello-single" class="form-control" name="agama">
@@ -454,7 +464,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                                    <i class="fas fa-map-marker" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="alamat" class="form-control" required="" value="{{Auth::user()->alamat}}">
@@ -467,7 +477,7 @@
                                                         <div class="col-lg-6">
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                                    <i class="fas fa-envelope" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="email" class="form-control" required="" value="{{Auth::user()->email}}">
@@ -477,7 +487,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                                                    <i class="fas fa-user" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="ktp" class="form-control" value="{{Auth::user()->ktp}}">
@@ -487,7 +497,7 @@
                                                             </div>
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                    <i class="fas fa-phone" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="tlp" class="form-control" required="" value="{{Auth::user()->tlp}}">
@@ -498,7 +508,7 @@
 
                                                             <div class="material-group">
                                                                 <div class="material-addone">
-                                                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                                                    <i class="fas fa-key" aria-hidden="true"></i>
                                                                 </div>
                                                                 <div class="form-group form-primary">
                                                                     <input type="text" name="password_baru" class="form-control">
@@ -814,9 +824,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e1e2e3b1b2b3c0e7ede1e9ecaee3efed">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -832,9 +842,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f6979495c7c4c5b6919b979f9ad895999b">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star-o" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star-o" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -850,9 +860,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="65040706545756250208040c094b060a08">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -868,9 +878,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b1b2b3e1e2e390b7bdb1b9bcfeb3bfbd">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -886,9 +896,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0263606133303142656f636b6e2c616d6f">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star-o" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star-o" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -904,9 +914,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6d7d4d5878485f6d1dbd7dfda98d5d9db">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -922,9 +932,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="19787b7a282b2a597e74787075377a7674">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -940,9 +950,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f3e3d3c6e6d6c1f38323e3633713c3032">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -958,9 +968,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c1c2c3919293e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -976,9 +986,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="65040706545756250208040c094b060a08">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star-o" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star-o" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -994,9 +1004,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9d8dbda888b8af9ded4d8d0d597dad6d4">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1012,9 +1022,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bddcdfde8c8f8efddad0dcd4d193ded2d0">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1030,9 +1040,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6100030250535221060c00080d4f020e0c">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1048,9 +1058,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d6c6f6e3c3f3e4d6a606c6461236e6260">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1066,9 +1076,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea8b8889dbd8d9aa8d878b8386c4898587">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star-o" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star-o" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1084,9 +1094,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2a29287a79780b2c262a222765282426">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1102,9 +1112,9 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4d5d6d7858687f4d3d9d5ddd89ad7dbd9">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star-o" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star-o" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
-                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-edit"></i>Edit</a>
                                                                 <a class="dropdown-item" href="#!"><i class="icofont icofont-ui-delete"></i>Delete</a>
@@ -1120,7 +1130,7 @@
                                                         <td>Garrett Winters</td>
                                                         <td><a href="http://html.phoenixcoded.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f9fafba9aaabd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</a></td>
                                                         <td>9989988988</td>
-                                                        <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                                        <td><i class="fas fa-star" aria-hidden="true"></i></td>
                                                         <td class="dropdown">
                                                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></button>
                                                             <div class="dropdown-menu dropdown-menu-right b-none contact-menu">

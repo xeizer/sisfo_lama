@@ -69,7 +69,9 @@
                             {{--chat button--}}
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{asset('gambar/nofoto.png')}}" class="img-radius" alt="User-Profile-Image">
+                                    @auth
+                                    <img src="{{asset(Auth::user()->foto)}}"" class="img-radius" alt="User-Profile-Image">
+                                    @endauth
                                     <span>
                                         @auth
                                             {{Auth::user()->name}}
@@ -125,7 +127,7 @@
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     @include('layouts.tema1.komponen.sidebar')
-
+                    {{--<x-tema1.sidebar />--}}
                     <div class="pcoded-content">
 
                         {{--pageheader--}}

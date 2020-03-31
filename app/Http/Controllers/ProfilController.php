@@ -23,6 +23,7 @@ class ProfilController extends Controller
     }
     public function update(Request $req)
     {
+
         $this->validate($req, [
             'name' => 'required',
             'username' => 'required|unique:users,username,' . Auth::id(),
@@ -31,12 +32,23 @@ class ProfilController extends Controller
             'tlp' => 'numeric',
             'agama' => 'required',
             'alamat' => 'required',
-            'ktp' => 'numeric',
+            'ktp' => 'nullable|numeric',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'date',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if (Hash::check($req->password, Auth::user()->password)) {
+
+            if (Auth::user()->hasRole('siswa')) {
+                $lokasifoto = 'foto_siswa';
+                $imageName = $lokasifoto . '/' . Auth::user()->siswa('nisn') . '.' . request()->foto->getClientOriginalExtension();
+            } else {
+                $lokasifoto = 'foto_nonsiswa';
+                $imageName = $lokasifoto . '/' . time() . '.' . request()->foto->getClientOriginalExtension();
+            }
+
+            request()->foto->move(public_path($lokasifoto), $imageName);
             User::find(Auth::id())->update([
                 'name' => $req->name,
                 'username' => $req->username,
@@ -48,6 +60,8 @@ class ProfilController extends Controller
                 'ktp' => $req->ktp,
                 'tempat_lahir' => $req->tempat_lahir,
                 'tanggal_lahir' => $req->tanggal_lahir,
+                'foto' => $imageName,
+
             ]);
             if ($req->password_baru) {
                 User::find(Auth::id())->update([
