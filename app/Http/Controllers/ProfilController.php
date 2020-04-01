@@ -18,7 +18,8 @@ class ProfilController extends Controller
     public function index()
     {
         return view('profil.index')->with([
-            'judul' => 'Profil'
+            'judul' => 'Profil',
+
         ]);
     }
     public function update(Request $req)

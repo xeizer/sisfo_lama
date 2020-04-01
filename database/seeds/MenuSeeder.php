@@ -37,7 +37,7 @@ class MenuSeeder extends Seeder
             'nama_menu' => 'Semua Siswa',
             'kode' => 'semua_siswa',
             'parent' => Menu::where('kode', 'kesiswaan')->first()->id,
-            'peran' => 'siswa',
+            'peran' => 'su|admin',
             'link' => "home",
             'icon' => 'ti-home',
             'enable' => true,

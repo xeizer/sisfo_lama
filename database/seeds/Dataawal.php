@@ -1,5 +1,6 @@
 <?php
 
+use App\Jurusan;
 use App\User;
 use Illuminate\Database\Seeder;
 use App\Role;
@@ -46,7 +47,7 @@ class Dataawal extends Seeder
         ]);
         $ortu = Role::create([
             'name' => 'ortu',
-            'color' =>'inverse-danger',
+            'color' => 'inverse-danger',
             'display_name' => 'Orang Tua'
         ]);
 
@@ -64,6 +65,9 @@ class Dataawal extends Seeder
             'alamat' => 'Jl. Apel Gg Langsat no 33'
         ])->attachRole('su')->attachRole('admin')->attachRole('guru');
 
-
+        Jurusan::create([
+            'kode' => 'RPL',
+            'nama_jurusan' => 'Rekayasa Perangkat Lunak',
+        ]);
     }
 }

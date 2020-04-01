@@ -61,7 +61,7 @@
         })
     </script>
     @endif
-@livewireScripts
 
+@livewireScripts
 @stack('script')
 

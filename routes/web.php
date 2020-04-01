@@ -25,3 +25,6 @@ Route::prefix('profil')->middleware('auth')->name('profil.')->group(function () 
     Route::put('/update', 'ProfilController@update')->name('update');
     Route::get('/setting', 'ProfilController@setting')->name('setting');
 });
+Route::prefix('jurusan')->middleware('auth')->name('jurusan.')->group(function () {
+    Route::get('/', 'JurusanController@index')->name('index');
+});
