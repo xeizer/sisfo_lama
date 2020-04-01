@@ -2,10 +2,10 @@
 
 @section('konten')
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5>Normal Sign In</h5>
+                <h5>Data Jurusan</h5>
             </div>
             <div class="card-block">
                 @livewire('lw-jurusan')

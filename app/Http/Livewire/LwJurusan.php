@@ -18,6 +18,11 @@ class LwJurusan extends Component
     }
     public function tambahJurusan()
     {
+        $this->validate([
+            'kode' => 'required|unique:jurusans',
+            'nama_jurusan' => 'required',
+        ]);
+
         Jurusan::create([
             'kode' => $this->kode,
             'nama_jurusan' => $this->nama_jurusan,
