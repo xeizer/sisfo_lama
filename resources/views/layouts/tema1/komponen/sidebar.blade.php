@@ -45,7 +45,7 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class="@isset($active2) @if($active2=='semuasiswa') active @endif @endisset">
-                        <a href="#! class="waves-effect waves-dark">
+                        <a href="#!" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">Senua Siswa</span>
                             <span class="pcoded-mcaret"></span>
@@ -245,7 +245,7 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class="@isset($active2) @if($active2=='semua_jurusan') active pcoded-trigger @endif @endisset">
-                        <a href="form-elements-component.html" class="waves-effect waves-dark">
+                        <a href="{{route('jurusan.index')}}" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">Semua Jurusan</span>
                             <span class="pcoded-mcaret"></span>
