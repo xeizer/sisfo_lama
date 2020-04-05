@@ -15,7 +15,11 @@ class GuruController extends Controller
      */
     public function index()
     {
-        //
+        return view('guru.index', [
+            'judul' => 'Semua Guru',
+            'active' => 'guru',
+            'active2' => 'semua_guru',
+        ]);
     }
 
     /**

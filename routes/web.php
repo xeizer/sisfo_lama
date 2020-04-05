@@ -25,6 +25,10 @@ Route::prefix('profil')->middleware('auth')->name('profil.')->group(function () 
     Route::put('/update', 'ProfilController@update')->name('update');
     Route::get('/setting', 'ProfilController@setting')->name('setting');
 });
-Route::prefix('jurusan')->middleware('auth')->name('jurusan.')->group(function () {
+Route::prefix('jurusan')->middleware('role:su|admin')->name('jurusan.')->group(function () {
     Route::get('/', 'JurusanController@index')->name('index');
+});
+Route::prefix('guru')->middleware('role:su|admin')->name('guru.')->group(function () {
+    Route::get('/api/index', 'GuruController@api-index')->name('api.index');
+    Route::get('/', 'GuruController@index')->name('index');
 });

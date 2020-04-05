@@ -20,6 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'username', 'email', 'password', 'jkel', 'tlp', 'agama', 'alamat', 'ktp', 'tempat_lahir', 'tanggal_lahir', 'foto',
     ];
+    public function guru()
+    {
+        return $this->hasOne('App\Guru', 'user_id');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

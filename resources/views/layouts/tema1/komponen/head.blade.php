@@ -26,6 +26,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/themify-icons/themify-icons.css') }}">
 
     {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
+    {{--datatables--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/pages/data-table/css/buttons.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css') }}">
+    {{----}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.0.1/collection/components/icon/icon.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/icon/icofont/css/icofont.min.css')}}">
