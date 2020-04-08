@@ -18,6 +18,15 @@ class CreateGurusTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('nip')->unique()->nullable();
             $table->string('niptk')->unique()->nullable();
+            $table->string('status')->nullable();
+            $table->string('pangkat')->nullable();
+            $table->string('golongan')->nullable();
+            $table->string('pendidikan_terakhir')->nullable();
+            $table->string('npwp')->nullable();
+            $table->string('kewarganegaraan')->nullable();
+            $table->string('no_sk_pengangkatan')->nullable();
+            $table->string('tmt_pengangkatan')->nullable();
+            $table->string('no_sertifikasi')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

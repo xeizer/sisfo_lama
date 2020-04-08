@@ -46,7 +46,7 @@
 <script src="{{ asset('mega-able/files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('mega-able/files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
-<script src="{{ asset('mega-able/files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js') }}"></script>
+{{--<script src="{{ asset('mega-able/files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js') }}"></script>--}}
 {{----}}
 <script type="text/javascript" src="{{ asset('mega-able/files/assets/js/script.js') }}"></script>
 

@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('agama')->nullable();
             $table->string('alamat')->nullable();
             $table->string('ktp')->nullable();
+            $table->string('no_kk')->nullable();
+            $table->string('no_akte')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->string('foto')->default('gambar/nofoto.png');

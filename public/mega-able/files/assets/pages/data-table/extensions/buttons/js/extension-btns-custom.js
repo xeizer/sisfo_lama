@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('#print-btn').DataTable({
         dom: 'Bfrtip',
         buttons: ['print']
@@ -98,9 +98,9 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [{
             extend: 'excelHtml5',
-            customize: function(xlsx) {
+            customize: function (xlsx) {
                 var sheet = xlsx.xl.worksheets['sheet1.xml'];
-                $('row c[r^="F"]', sheet).each(function() {
+                $('row c[r^="F"]', sheet).each(function () {
                     if ($('is t', this).text().replace(/[^\d]/g, '') * 1 >= 500000) {
                         $(this).attr('s', '20');
                     }
@@ -127,7 +127,7 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [{
             extend: 'pdfHtml5',
-            customize: function(doc) {
+            customize: function (doc) {
                 doc.content.splice(1, 0, {
                     margin: [0, 0, 0, 12],
                     alignment: 'center',
@@ -147,21 +147,18 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [{
             text: 'JSON',
-            action: function(e, dt, button, config) {
+            action: function (e, dt, button, config) {
                 var data = dt.buttons.exportData();
                 $.fn.dataTable.fileSave(new Blob([JSON.stringify(data)]), 'Export.json');
             }
         }]
     });
-    $('#basic-btn').DataTable({
-        dom: 'Bfrtip',
-        buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-    });
+
     $('#custom-btn').DataTable({
         dom: 'Bfrtip',
         buttons: [{
             text: 'My Custom button',
-            action: function(e, dt, node, config) {
+            action: function (e, dt, node, config) {
                 alert('Button activated');
             }
         }]
@@ -184,7 +181,7 @@ $(document).ready(function() {
         buttons: [{
             text: 'Button <u>1</u>',
             key: '1',
-            action: function(e, dt, node, config) {
+            action: function (e, dt, node, config) {
                 alert('Button 1 activated');
             }
         }, {
@@ -193,7 +190,7 @@ $(document).ready(function() {
                 altKey: true,
                 key: '2'
             },
-            action: function(e, dt, node, config) {
+            action: function (e, dt, node, config) {
                 alert('Button 2 activated');
             }
         }]
@@ -205,12 +202,12 @@ $(document).ready(function() {
             text: 'Table control',
             buttons: [{
                 text: 'Toggle start date',
-                action: function(e, dt, node, config) {
+                action: function (e, dt, node, config) {
                     dt.column(-2).visible(!dt.column(-2).visible());
                 }
             }, {
                 text: 'Toggle salary',
-                action: function(e, dt, node, config) {
+                action: function (e, dt, node, config) {
                     dt.column(-1).visible(!dt.column(-1).visible());
                 }
             }, 'colvis']
@@ -220,7 +217,7 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [{
             text: 'Button 1',
-            action: function(e, dt, node, config) {
+            action: function (e, dt, node, config) {
                 alert('Button 1 clicked on');
             }
         }]

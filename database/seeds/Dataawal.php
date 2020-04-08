@@ -69,5 +69,25 @@ class Dataawal extends Seeder
             'kode' => 'RPL',
             'nama_jurusan' => 'Rekayasa Perangkat Lunak',
         ]);
+        Jurusan::create([
+            'kode' => 'TKJ',
+            'nama_jurusan' => 'Teknik Komputer dan Jaringan',
+        ]);
+        Jurusan::create([
+            'kode' => 'MM',
+            'nama_jurusan' => 'Multimedia',
+        ]);
+        Jurusan::create([
+            'kode' => 'AK',
+            'nama_jurusan' => 'Akutansi',
+        ]);
+        Jurusan::create([
+            'kode' => 'TLAS',
+            'nama_jurusan' => 'Teknik Pengelasan',
+        ]);
+        Jurusan::create([
+            'kode' => 'TBSM',
+            'nama_jurusan' => 'Teknik dan Bisnis Sepeda Motor',
+        ]);
     }
 }
