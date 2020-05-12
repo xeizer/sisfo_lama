@@ -32,14 +32,14 @@
         <ul class="pcoded-item pcoded-left-item">
             <li class="@isset($active) @if($active=='dashboard') active pcoded-trigger @endif @endisset">
                 <a href="{{route('home')}}" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                    <span class="pcoded-micon"><i class="fas fa-home-lg fa-lg"></i><b>D</b></span>
                     <span class="pcoded-mtext">Dashboard</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li class="@isset($active) @if($active=='kesiswaan') active pcoded-trigger @endif @endisset pcoded-hasmenu">
                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="fas fa-users    "></i><b>K</b></span>
+                    <span class="pcoded-micon"><i class="fas fa-users fa-lg"></i><b>K</b></span>
                     <span class="pcoded-mtext">Kesiswaan</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
@@ -84,7 +84,7 @@
             </li>
             <li class="@isset($active) @if($active=='guru') active pcoded-trigger @endif @endisset pcoded-hasmenu">
                 <a href="javascript:void(0)" class="waves-effect waves-dark">
-                    <span class="pcoded-micon"><i class="fas fa-chalkboard-teacher    "></i><b>G</b></span>
+                    <span class="pcoded-micon"><i class="fad fa-chalkboard-teacher fa-lg"></i><b>G</b></span>
                     <span class="pcoded-mtext">Guru</span>
                     <span class="pcoded-mcaret"></span>
                 </a>

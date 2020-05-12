@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="{{ asset('mega-able/files/assets/pages/chart/radial/css/radial.css') }}" type="text/css" media="all">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('mega-able/files/assets/css/style.css') }}">
+    <script src="{{ asset('mega-able/files/assets/js/colong.js')}}"></script>
     @livewireStyles
     <style>
         @keyframes fa-blink {

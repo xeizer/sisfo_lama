@@ -17,7 +17,7 @@ class CreateGurusTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->string('nip')->unique()->nullable();
-            $table->string('niptk')->unique()->nullable();
+            $table->string('nuptk')->unique()->nullable();
             $table->string('status')->nullable();
             $table->string('pangkat')->nullable();
             $table->string('golongan')->nullable();

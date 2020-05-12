@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Guru;
-use App\Http\Controllers\Controller;
+use App\Imports\GuruImport;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class GuruController extends Controller
 {
@@ -13,12 +14,36 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function importGuru(Request $request)
+    {
+        //$path=$request->file('file')->getRealPath();
+        Excel::import(new ImportGuru, request()->file('file'));
+        //dd(session()->get('berhasil').' '.session()->get('kegagalan'));
+        Session::flash("flash_notif", [
+            "judul" => "Berhasil",
+            "type" => "success",
+            "pesan" => "Tersimpan ",
+            "icon" => "fa-check-circle"
+        ]);
+        return redirect()->route('guru.index');
+    }
+    public function guru()
+    {
+        $data = Guru::with('user')->get();
+        return DataTables::of($data)
+            ->addColumn('aksi', function () {
+                return view('guru.komponen.aksi');
+            })
+            ->rawColumns(['aksi'])
+            ->make(true);
+    }
     public function index()
     {
         return view('guru.index', [
             'judul' => 'Semua Guru',
             'active' => 'guru',
             'active2' => 'semua_guru',
+            'data' => Guru::cursor(),
         ]);
     }
 
