@@ -65,6 +65,19 @@ class Dataawal extends Seeder
             'alamat' => 'Jl. Apel Gg Langsat no 33'
         ])->attachRole('su')->attachRole('admin')->attachRole('guru');
 
+        $su = User::create([
+            'name' => 'Teguh Firmansyah',
+            'username' => 'teguh',
+            'password' => bcrypt('rahasia'),
+            'email' => ' teguh@smkn7ptk.sch.id',
+            'tempat_lahir' => 'Jakarta',
+            'tanggal_lahir' => '1979/05/15',
+            'agama' => 'Islam',
+            'jkel' => 'L',
+            'tlp' => '08115733755',
+            'alamat' => 'Jl. Prt. Bugis Gg. Akasia'
+        ])->attachRole('su')->attachRole('admin')->attachRole('guru');
+
         Jurusan::create([
             'kode' => 'RPL',
             'nama_jurusan' => 'Rekayasa Perangkat Lunak',
@@ -79,7 +92,7 @@ class Dataawal extends Seeder
         ]);
         Jurusan::create([
             'kode' => 'AK',
-            'nama_jurusan' => 'Akutansi',
+            'nama_jurusan' => 'Akuntansi Keuangan dan Lembaga',
         ]);
         Jurusan::create([
             'kode' => 'TLAS',
